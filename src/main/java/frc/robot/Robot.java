@@ -26,7 +26,7 @@ public class Robot extends TimedRobot {
   // private final CANSparkMax motor61 = new CANSparkMax(61, MotorType.kBrushless);
   private final CANSparkFlex motorTop = new CANSparkFlex(10, MotorType.kBrushless);
   private final CANSparkFlex motorBottom = new CANSparkFlex(11, MotorType.kBrushless);
-  // private final CANSparkMax motor550 = new CANSparkMax(42, MotorType.kBrushless);
+  // private final CANSparkMax motor42 = new CANSparkMax(42, MotorType.kBrushless);
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
@@ -89,14 +89,14 @@ public class Robot extends TimedRobot {
     // motor61.setInverted(true);
     motorTop.setInverted(true);
     motorBottom.setInverted(true);
-    // motor550.setInverted(false);
+    // motor42.setInverted(false);
 
   }
   @Override
   public void teleopPeriodic() {
     // motor62.set(0.5);
     // motor61.set(0.5* 4);
-    // motor550.set(0.5 * 4);
+    // motor42.set(0.5 * 4);
     motorTop.set(0.1);
     motorBottom.set(0.2);
     // motor10.set(0.05);
