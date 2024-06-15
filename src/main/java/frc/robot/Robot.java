@@ -22,11 +22,11 @@ public class Robot extends TimedRobot {
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   // private final motor mot = new motor();
-  private final CANSparkFlex motor62 = new CANSparkFlex(62, MotorType.kBrushless); 
-  private final CANSparkMax motor61 = new CANSparkMax(61, MotorType.kBrushless);
-  // private final CANSparkFlex motor10 = new CANSparkFlex(10, MotorType.kBrushless);
-  // private final CANSparkFlex motor11 = new CANSparkFlex(11, MotorType.kBrushless);
-  private final CANSparkMax motor550 = new CANSparkMax(42, MotorType.kBrushless);
+  // private final CANSparkFlex motor62 = new CANSparkFlex(62, MotorType.kBrushless); 
+  // private final CANSparkMax motor61 = new CANSparkMax(61, MotorType.kBrushless);
+  private final CANSparkFlex motorTop = new CANSparkFlex(10, MotorType.kBrushless);
+  private final CANSparkFlex motorBottom = new CANSparkFlex(11, MotorType.kBrushless);
+  // private final CANSparkMax motor550 = new CANSparkMax(42, MotorType.kBrushless);
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
@@ -85,20 +85,20 @@ public class Robot extends TimedRobot {
   /** This function is called once when teleop is enabled. */
   @Override
   public void teleopInit() {
-    motor62.setInverted(false);
-    motor61.setInverted(true);
-    // motor10.setInverted(true);
-    // motor11.setInverted(true);
-    motor550.setInverted(false);
+    // motor62.setInverted(false);
+    // motor61.setInverted(true);
+    motorTop.setInverted(true);
+    motorBottom.setInverted(true);
+    // motor550.setInverted(false);
 
   }
   @Override
   public void teleopPeriodic() {
-    motor62.set(0.5);
-    motor61.set(0.5* 4);
-    motor550.set(0.5 * 4);
-    // motorTop10.set(0.1);
-    // motorBottom11.set(0.2);
+    // motor62.set(0.5);
+    // motor61.set(0.5* 4);
+    // motor550.set(0.5 * 4);
+    motorTop.set(0.1);
+    motorBottom.set(0.2);
     // motor10.set(0.05);
     // motor11.set(0.25);
   }
